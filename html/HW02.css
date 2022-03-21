@@ -24,14 +24,17 @@
 .login img{
     padding: 0 25px;
 }
-.menu .item{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px 0 15px 110px;
+.menu{
     width: 100%;
     background-color: white;
     position: fixed;
     top: 39px;
+    padding: 15px;
+}
+.menu .item
+{
+    display: flex;
+    flex-wrap: wrap;
 }
 .item nav{
     margin: 15px 0;
