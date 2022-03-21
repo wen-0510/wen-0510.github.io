@@ -27,7 +27,8 @@
 .menu .item{
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 110px;
+    padding: 15px 0 15px 110px;
+    width: 100%;
     background-color: white;
     position: fixed;
     top: 35px;
