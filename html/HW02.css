@@ -226,8 +226,12 @@
     color: rgb(16, 17, 17);
     font-weight: bold;
 }
-hr{
+.wrap hr{
     margin: 80px 0;
+    border: none;
+    background-color: rgba(241, 238, 238, 0.2);
+    height: 1px;
+    width: 100%;
 }
 .last .wrap{
     display: flex;
