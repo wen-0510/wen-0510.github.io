@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+}
+.header .login{
+    padding: 0 80px;
+    text-align: right;
+    width: 100%;
+}
+.header  a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin: 0 10px;
+}
+.login img{
+    padding: 0 25px;
+}
+.menu .item{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 110px;
+    background-color: white;
+    position: fixed;
+    top: 35px;
+}
+.item nav{
+    margin: 15px 0;
+}
+.logo{
+    margin: 0 50px 0 0;
+}
+.item nav a{
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+}
+.menu .button a{
+    width: 50px;
+    height: 50px;
+    padding: 10px 15px;
+    background-color: rgb(20, 109, 243);
+    border-radius: 40px;
+    color: white;   
+}
+.menu .button{
+    margin: 15px 0 15px 335px;
+}
+.mark{
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+}
+.mark img{
+    border-radius: 50%;
+}
+.banner img,
+.brand .item img,
+.row .pic img{
+    width: 100%;
+}
+.about{
+    text-align: center;
+    padding: 70px 0;
+    font-size: 24px;
+}
+.about h2{
+    margin: 20px 0;
+}
+.about p{
+    font-size: 18px;
+}
+.group{
+    width: 1200px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+.row:nth-child(2n)
+{
+    flex-direction: row-reverse;
+}
+.row .tex h2{
+    font-size: 36px;
+    margin: 0 0 30px;
+}
+.row .tex{
+    width: 580px;
+    text-align: left;
+    font-size: 18px;
+    margin: 0 20px;
+}
+.row .pic{
+    width: 520px;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 580px;
+    margin: 30px 0;
+}
+.list div{
+    width: 290px;
+    margin: 2px 0;
+}
+.list a{
+    margin: 30px 0;
+    text-decoration: none;
+}
+.service{
+    background-color: rgb(187, 183, 183, .2);
+    padding: 50px 0;
+}
+.service .wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.service h2{
+    text-align: center;
+    margin: auto;
+    font-size: 36px;
+    padding: 20px 0;
+}
+.service .item img{
+    border-radius: 50%;
+    padding: 35px 90px;
+}
+.wrap{
+    width: 1200px;
+    margin: auto;
+}
+.service .wrap .item{
+    width: 300px;
+    margin: 0 50px;
+    text-align: center;
+}
+.brand h2{
+    text-align: center;
+    margin: 70px 0 0;
+    font-size: 36px;
+}
+.brand span{
+    color: rgb(20, 109, 243);
+}
+.brand .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+}
+.brand .item{
+    width: 240px;
+}
+.suggest .row{
+    margin: 10px 120px 60px;
+}
+.suggest .tex{
+    width: 510px;
+    text-align: left;
+    margin: 10px 0 0 40px;
+}
+.suggest .tex a{
+    text-decoration: none;
+}
+.suggest .tex p{
+    margin: 30px 0 145px 0;
+    font-size: 16px;
+}
+.suggest .pic{
+    width: 680px;
+}
+.footer{
+    background-color: #00142D;
+    padding: 80px 0 70px;
+}
+.footer .col a{
+    color: rgba(241, 238, 238, 0.4);
+    text-decoration: none;
+}
+.col .intr a{
+    color: white;
+    text-decoration: none;
+}
+.two{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .group{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    width: 150px;
+}
+.col div{
+    margin: 0 0 25px;
+}
+.col:nth-child(6){
+    margin: 0 130px 0 20px;
+    white-space: nowrap;
+}
+.footer .button{
+    height: 30px;
+    width: 200px;
+    background-color: #dbf8ed;
+    text-align: center;
+    padding: 5px 0;
+
+}
+.wrap .button{
+    margin: 50px 0 0 1000px;
+    padding: 5px 0 0 0;
+}
+.button a{
+    text-decoration: none;
+    color: rgb(16, 17, 17);
+    font-weight: bold;
+}
+hr{
+    margin: 80px 0;
+}
+.last .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wrap .alink a{
+    text-decoration: none;
+    color: white;
+}
+.alink a+a::before{
+    content: '|';
+    margin: 0 5px 0 0;
+}
+.shoplinecopy{
+    color: rgba(241, 238, 238, 0.4);
+}
+.last .pic img{
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+
+
+
+
+
+
