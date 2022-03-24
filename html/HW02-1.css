@@ -50,7 +50,7 @@
     color: black;
     margin: 0 5px;
 }
-.menu-btn a{
+.free-btn a{
     display: inline-block;
     color: white;
     background-color: rgb(20, 109, 243);
@@ -76,12 +76,12 @@
 .about p{
     font-size: 16px;
 }
-.introduce-function .row{
+.function .row{
     display: flex;
     flex-wrap: wrap;
     margin: 100px 0;
 }
-.introduce-function .row:nth-child(2n)
+.function .row:nth-child(2n)
 {
     flex-direction: row-reverse;
 }
@@ -90,20 +90,20 @@
     margin: 0 0 30px;
     font-weight: 600;
 }
-.introduce-function .tex{
+.function .tex{
     width: 640px;
     text-align: left;
     font-size: 16px;
     padding: 20px;
 }
-.introduce-function a{
+.function a{
     text-decoration: none;
     color: blue;
 }
-.introduce-function .pic{
+.function .pic{
     width: 520px;
 }
-.introduce-function .pic img{
+.function .pic img{
     width: 100%;
 }
 .list{
