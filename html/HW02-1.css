@@ -96,6 +96,10 @@
     font-size: 16px;
     padding: 20px;
 }
+.introduce-function a{
+    text-decoration: none;
+    color: blue;
+}
 .introduce-function .pic{
     width: 520px;
 }
