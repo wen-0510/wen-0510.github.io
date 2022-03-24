@@ -6,7 +6,6 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
 }
 .login{
     text-align: right;
@@ -245,7 +244,7 @@
     background-color: #dbf8ed;
     height: 20px;
     width: 245px;
-    padding: 10px 10px 15px;
+    padding: 15px 10px 10px;
     margin-left: 860px;
     text-align: center;
     font-size: 18px;
