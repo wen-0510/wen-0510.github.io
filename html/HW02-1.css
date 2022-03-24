@@ -1,0 +1,271 @@
+.head{
+    background-color: black;
+    width: 1180px;
+    margin: auto;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.login{
+    text-align: right;
+    margin: 0 60px;
+}
+.login a{
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.login .pic{
+    padding: 0 20px;
+}
+.menu{
+    width: 1160px;
+    margin: auto;
+    padding: 20px;
+    position: fixed;
+    background-color: white;
+    left: 0;
+    right: 0;
+    top: 36px;
+}
+.menu .item{
+    display: flex;
+    align-items: center;
+}
+.menu .logo{
+    margin-left: 35px;
+}
+.menu .logo img{
+    width: 120px;
+    height: 20px;
+}
+.nav-menu{
+    flex-grow: 1;
+    margin-left: 40px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+    margin: 0 5px;
+}
+.menu-btn a{
+    display: inline-block;
+    color: white;
+    background-color: rgb(20, 109, 243);
+    border-radius: 40px;
+    padding: 10px 15px;
+    margin: 0 65px;
+}
+.introduce{
+    width: 1200px;
+    margin: auto;
+    background-color: white;
+}
+.introduce .about{
+    text-align: center;
+    padding: 70px 0;
+    font-size: 24px;
+}
+.about h1{
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+.about p{
+    font-size: 16px;
+}
+.introduce-function .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+.introduce-function .row:nth-child(2n)
+{
+    flex-direction: row-reverse;
+}
+.row .tex h2{
+    font-size: 30px;
+    margin: 0 0 30px;
+    font-weight: 600;
+}
+.introduce-function .tex{
+    width: 640px;
+    text-align: left;
+    font-size: 16px;
+    padding: 20px;
+}
+.introduce-function .pic{
+    width: 520px;
+}
+.introduce-function .pic img{
+    width: 100%;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 660px;
+    margin: 40px 0;
+}
+.list div{
+    width: 50%;
+    margin: 10px 0;
+}
+.list div::before{
+    content: '\f058';
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    color: #b0cdf8;
+    margin: 0 5px;
+}
+.txt a{
+    margin: 30px 0;
+    text-decoration: none;
+}
+.service{
+    background-color: rgb(187, 183, 183, .2);
+    padding: 50px 0;
+}
+.service .wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.service h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+.service .item img{
+    border-radius: 50%;
+    padding: 30px 90px;
+}
+.service .wrap .item{
+    width: 300px;
+    margin: 0 50px;
+    text-align: center;
+}
+.service h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.service p{
+    text-align: left;
+    line-height: 1.3;
+}
+.brand{
+    background-color: white;
+}
+.brand h3{
+    text-align: center;
+    margin: 70px 0 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+.brand span{
+    color: rgb(20, 109, 243);
+}
+.brand .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+    justify-content: center;
+}
+.brand .item{
+    width: 220px;
+}
+.brand .item img{
+    width: 100%;
+}
+.suggest .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 10px 60px;
+}
+.suggest .tex{
+    width: 540px;
+}
+.suggest .tex a{
+    text-decoration: none;
+    margin-left: 40px;
+}
+.suggest .tex p
+{
+    margin: 30px 0 140px 40px;
+    font-size: 16px;
+}
+.suggest .tex span{
+    margin-left: 40px;
+}
+.suggest .pic{
+    width: 600px;
+}
+.suggest .pic img{
+    width: 100%;
+}
+.banner img{
+    vertical-align: bottom;
+}
+.group{
+    background-color: #00142D;
+    width: 1200px;
+    margin: auto;
+}
+.related-understand{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 60px 20px;
+    
+}
+.col h4{
+    margin-bottom: 40px;
+}
+.col h4 a{
+    color: white;
+    font-size: 18px;
+}
+.group a{
+    text-decoration: none;
+    color: rgba(241, 238, 238, 0.4);
+}
+.col div{
+    margin-bottom: 20px;
+}
+.prevention-btn a{
+    color: rgb(16, 17, 17);
+    font-weight: 600;
+
+}
+.prevention-btn{
+    display: inline-block;
+    background-color: #dbf8ed;
+    height: 20px;
+    width: 245px;
+    padding: 15px 10px 10px;
+    margin-left: 860px;
+    text-align: center;
+    font-size: 18px;
+}
+.tail-menu{
+    padding: 80px 0 50px;
+}
+.tail-menu .wrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tail-nav a+a::before{
+    content: '|';
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.website-link a{
+    margin: 0 10px;
+    font-size: 22px;
+}
+.shoplinecopy{
+    color: rgba(241, 238, 238, 0.4);;
+}
