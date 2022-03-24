@@ -218,7 +218,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 60px 20px;
-    
 }
 .col h4{
     margin-bottom: 40px;
@@ -231,7 +230,7 @@
     text-decoration: none;
     color: rgba(241, 238, 238, 0.4);
 }
-.col div{
+.col li{
     margin-bottom: 20px;
 }
 .prevention-btn a{
@@ -239,7 +238,7 @@
     font-weight: 600;
 
 }
-.prevention-btn{
+.prevention-btn .wrap{
     display: inline-block;
     background-color: #dbf8ed;
     height: 20px;
