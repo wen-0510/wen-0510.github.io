@@ -212,7 +212,7 @@
 .banner img{
     vertical-align: bottom;
 }
-.group{
+.information{
     background-color: #00142D;
     width: 1200px;
     margin: auto;
@@ -230,7 +230,7 @@
     color: white;
     font-size: 18px;
 }
-.group a{
+.information a{
     text-decoration: none;
     color: rgba(241, 238, 238, 0.4);
 }
