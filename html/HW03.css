@@ -1,0 +1,117 @@
+.odd-introduce{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 420px;
+}
+.car{
+    position: relative;
+    width: 695px;
+    height: 425px;
+}
+.car img{
+    position: relative;
+}
+.car .grey-area{
+    width: 350px;
+    height: 225px;
+    background-color: #f5f3f3;
+    position: absolute;
+    top: -72px;
+    right: -60px;
+}
+button{
+    position: relative;
+    left: 660px;
+    top: -260px;
+    font-size: 30px;
+    color: red;
+}
+.advantage{
+    width: 320px;
+    position: absolute;
+    left: -170px;
+    top: -105px;
+}
+.advantage h2{
+    font-size: 32px;
+    color: white;
+    padding: 10px;
+    background-color: brown;
+}
+h2 span{
+    margin-right: 20px;
+    writing-mode: vertical-lr;
+    font-size: 80px;
+}
+.advantage .tex{
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+.advantage h3{
+    font-size: 22px;
+    font-weight: 600;
+    padding: 15px;
+}
+.advantage p{
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 15px 15px;
+}
+.function{
+    background-color: #eee;
+    width: 645px;
+    height: 200px;
+    padding: 20px;
+    position: absolute;
+    left: -70px;
+    bottom: -200px;
+}
+.list {
+    margin-top: 10px;
+}
+.list span{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    width: 115px;
+    text-align: center;
+}
+.list ul{
+    margin: 10px 0;
+}
+.function h3{
+    color: brown;
+    font-weight: 600;
+    font-size: 18px;
+}
+.function ul{
+    list-style-type: square;
+    margin-left: 20px;
+}
+.even-introduce{
+    width: 100%;
+    margin-bottom: 420px;
+}
+.even-introduce .car{
+    width: 1035px;
+    margin: auto;
+}
+.even-introduce .grey-area{
+    width: 517px;
+    height: 412px;
+    left: 245px;
+    top: -105px;
+}
+.even-introduce button{
+    left: -705px;
+    top: -195px;
+}
+.even-introduce .advantage{
+    left: 610px;
+}
+.even-introduce .function{
+    left: 245px;
+}
