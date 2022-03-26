@@ -111,7 +111,12 @@ h2 span{
 }
 .even-introduce .advantage{
     left: 610px;
+    top: -100px;
 }
 .even-introduce .function{
     left: 245px;
 }
+.even-introduce h2{
+    text-align: right;
+}
+
