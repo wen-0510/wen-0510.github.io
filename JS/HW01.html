@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡介</title>
+    <link rel="stylesheet" href="HW01.css">
+</head>
+<body>
+    
+
+    <div class="profile">
+        <img id="personal-img" class="img-size">
+        <div class="tex">
+            <div class="name">
+                <h2>姓名 : </h2>
+                <span></span>
+            </div>
+            <div class="email">
+                <h2>Email : </h2>
+                <span></span>
+            </div>
+            <div class="university">
+                <h2>學校 : </h2>
+                <span></span>
+            </div>
+            <div class="interest">
+                <h2>興趣 : </h2>
+                <span></span>
+            </div>
+        </div>
+        <div class="pic">
+            <img>
+            <img>
+            <img>
+        </div>
+    </div>
+
+    <script>
+        let img = document.getElementById("personal-img");
+        let imgUrl = "https://raw.githubusercontent.com/wen-0510/FileStorages/main/1.jpg";
+        let span = document.querySelectorAll("span");
+        let three_pic = document.querySelectorAll(".pic img");
+        const answerArray = ["吳霈玟","xxxxx","中華大學","音樂"];
+        const imageArray = [
+            "https://th.bing.com/th/id/R.88f9391b2dd59facc6dc462ec7489296?rik=F3W1wF%2fwGdr%2f2w&riu=http%3a%2f%2fwww3.365shu.com%2fimages3%2fwall%2f20061119%2fdog010.jpg&ehk=8trzLNKOdnSBw4KAHmkrdMYa0UPskV4UvUuxB2hVlJI%3d&risl=&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/R.c9deae53f57b7eab3038df1cc1651f7b?rik=80ItoGpJGvzMrw&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/R.daf77f9ef7f0ddc7eab50e43648b0d39?rik=GT5KOE11VIARcg&riu=http%3a%2f%2fwww.pp3.cn%2fuploads%2f201502%2f2015021306.jpg&ehk=5wZ5EhwbfM2pJwp3tWsaM6lcvVtXd%2fJ%2fwc7I6Jm8ia8%3d&risl=&pid=ImgRaw&r=0",
+        ];
+        
+        img.setAttribute("src",imgUrl);
+        img.setAttribute("class","img-size");
+        
+
+        answerArray.forEach((answer,index)=>{
+            console.log(span[index].innerText = answerArray[index]);
+            });
+        imageArray.forEach((image,index) => {
+            console.log(three_pic[index].setAttribute("src",imageArray[index]));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.profile{
+    width: 700px;
+    margin: auto;
+    border: 1px solid red;
+}
+.img-size{
+    width: 160px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 270px;
+}
+.pic{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.pic img{
+    width: 200px;
+    height: 150px;
+}
