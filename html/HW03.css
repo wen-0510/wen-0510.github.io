@@ -98,6 +98,7 @@ h2 span{
 }
 .even-introduce img{
     margin-top: 105px;
+    margin-left: 8px;
     position: relative;
     cursor: pointer;
 
