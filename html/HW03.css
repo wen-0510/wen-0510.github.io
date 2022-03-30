@@ -71,7 +71,7 @@ h2 span{
 .list {
     margin-top: 10px;
 }
-.list span{
+.list h4{
     display: inline-block;
     background-color: black;
     color: white;
