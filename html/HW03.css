@@ -1,38 +1,38 @@
 .odd-introduce{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
-    margin-bottom: 420px;
-}
-.car{
-    position: relative;
-    width: 695px;
-    height: 425px;
-}
-.car img{
+    width: 930px;
+    height: 690px;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 120px;
     position: relative;
 }
-.car .grey-area{
+.odd-introduce img{
+    margin-top: 105px;
+    margin-left: 165px;
+    position: relative;
+    cursor: pointer;
+
+}
+.odd-introduce .grey-area{
     width: 350px;
     height: 225px;
     background-color: #f5f3f3;
     position: absolute;
-    top: -72px;
-    right: -60px;
+    top: 30px;
+    right: 0;
 }
 button{
     position: relative;
-    left: 655px;
-    top: -260px;
+    left: -40px;
+    top: -220px;
     font-size: 30px;
     color: red;
 }
 .advantage{
     width: 320px;
     position: absolute;
-    left: -170px;
-    top: -105px;
+    left: 0;
+    top: 0;
 }
 .advantage h2{
     font-size: 32px;
@@ -63,23 +63,23 @@ h2 span{
 .function{
     background-color: #eee;
     width: 645px;
-    height: 200px;
-    padding: 20px;
+    padding: 20px 20px 10px;
     position: absolute;
-    left: -70px;
-    bottom: -200px;
+    left: 70px;
+    bottom: 0;
 }
 .list {
     margin-top: 10px;
 }
 .list span{
+    display: inline-block;
     background-color: black;
     color: white;
     padding: 5px;
     text-align: center;
 }
 .list ul{
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .function h3{
     color: brown;
@@ -91,18 +91,24 @@ h2 span{
     margin-left: 20px;
 }
 .even-introduce{
-    width: 100%;
-    margin-bottom: 420px;
-}
-.even-introduce .car{
-    width: 1035px;
+    width: 930px;
+    height: 660px;
     margin: auto;
+    position: relative;
+}
+.even-introduce img{
+    margin-top: 105px;
+    position: relative;
+    cursor: pointer;
+
 }
 .even-introduce .grey-area{
     width: 517px;
     height: 412px;
-    left: 245px;
-    top: -80px;
+    background-color: #f5f3f3;
+    position: absolute;
+    top: 30px;
+    left: 250px;
 }
 .even-introduce button{
     left: -705px;
@@ -110,7 +116,7 @@ h2 span{
 }
 .even-introduce .advantage{
     left: 610px;
-    top: -105px;
+    top: 0;
 }
 .even-introduce .function{
     left: 245px;
