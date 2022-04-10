@@ -938,6 +938,9 @@ header input {
         width: calc(50% - 140px);
         margin: 100px 70px 100px 70px;
     }
+    .banner .row a{
+        width: 35%;
+    }
     .banner .tex span {
         font-size: 38px;
     }
@@ -948,6 +951,9 @@ header input {
     }
     .banner p {
         margin-top: 30px;
+    }
+    .email-free{
+        flex-wrap: nowrap;
     }
     .col-xl-4 {
         width: 33.3333%;
