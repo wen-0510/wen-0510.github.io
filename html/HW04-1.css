@@ -1048,6 +1048,11 @@ header input {
     }
     .prevention-btn{
         max-width: 1350px;
+        margin: auto;
+    }
+    .tail-menu .wrap{
+        max-width: 1400px;
+        margin: auto;
     } 
 
 }
