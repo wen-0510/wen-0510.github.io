@@ -1,0 +1,36 @@
+.bgc-navbr,
+.download-color{
+    background-color: #7952b3;
+}
+.btn-color{
+    border-color: #ffe484;
+    color: #ffe484;
+}
+.card-link a{
+    font-size: 12px;
+    text-decoration: none;
+}
+.card-pic{
+    cursor: pointer;
+}
+.RTL-title{
+    border-top: 1px solid rgb(219, 217, 217,.6);
+}
+.RTL-card{
+    border-left: 4px solid #f0ad4e;
+}
+.RTL-card p{
+    font-size: 16px;
+}
+.Masonry-card{
+    border-bottom: 1px solid rgb(219, 217, 217,.6);;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+
+
+
