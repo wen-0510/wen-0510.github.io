@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>寶可夢圖鑑列表</h1>
+    <button id='loadall' onclick="allPokemon()">Load All</button>
+    <button id='addone' onclick="AddPokemon()">Click +1</button>
+    <button id='removeone' onclick="removePokemon()">Click -1</button>
+    <button id='reset' onclick="resetPokemon()">Reset</button>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+
+        let container;
+        let filename = 0;
+        window.onload = function(){
+            container = document.getElementById("container");
+
+        }
+
+        function appendPokemon(){
+            let img = document.createElement("img");
+
+            img.setAttribute("src","https://assets.pokemon.com/assets/cms2/img/pokedex/detail/700.png");
+
+            container.appendChild(img);
+        }
+        
+        function appendPokemonByTemplate(){
+            fileName = "001";
+            let pathFile =`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let pokemon = `<img src = '${pathFile}'>`;
+
+            container.innerHTML = pokemon;
+        }
+
+        function allPokemon(){
+            for(let i = 1; i < 898; i++){
+                let filenumber = i.toString().padStart(3,"0");
+                addpicture(filenumber);
+                filename = parseInt(filenumber);
+            }
+        }
+
+        function addpicture(add){
+            let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${add}.png`;
+
+            let img = document.createElement("img");
+
+            img.setAttribute("src", pathFile);
+            container.append(img);
+            img.addEventListener("click",function(event){
+            container.removeChild(event.target);
+
+            })
+        } 
+
+        let btn2 = document.getElementById("addone");
+        btn2.onclick = function(event){
+            
+            filename+=1;
+            let addfile = filename.toString().padStart(3,"0");
+            addpicture(addfile);
+        }
+
+        function removePokemon(){
+            container.removeChild(container.lastChild)
+            filename-=1;
+        }
+        function resetPokemon(){
+            container.innerHTML = "";
+            filename = 0;
+        }
+    </script>
+</body>
+</html>
