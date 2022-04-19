@@ -78,7 +78,11 @@
 
             drawPieChart(companies,data);
             createThead();
-            createTbody();
+            marketingShare.data.forEach(mkData => {
+                let values = Object.values(mkData);
+                dataArray.push(values);
+            })
+            createTbody(dataArray);
             
         }
 
@@ -94,27 +98,19 @@
             container.append(table);
         }
 
-        function createTbody(){
-            marketingShare.data.forEach(item => {
+        function createTbody(datacontent){        
+            datacontent.forEach(company => {
                 let tbodytr = document.createElement("tr");
-                let tdRaning = document.createElement("td");
-                let tdName = document.createElement("td");
-                let tdCountry= document.createElement("td");
-                let tdRatio= document.createElement("td");
-                tdRaning.innerHTML = item.Raning;
-                tdName.innerHTML = item.Name;
-                tdCountry.innerHTML = item.Country;
-                tdRatio.innerHTML = item.Ratio;
-                tbodytr.append(tdRaning);
+                company.forEach(item => {
+                    let td = document.createElement("td");
+                    td.innerHTML = item;
+                    tbodytr.append(td);
+                });
                 tbody.append(tbodytr);
-                table.append(tbodytr);
-                tbodytr.append(tdName);
-                tbodytr.append(tdCountry);
-                tbodytr.append(tdRatio);
             });
+            table.append(tbody);
             container.append(table);
         }
-
     </script>
 
     <script>
@@ -161,10 +157,6 @@
                     }
                 }
             });
-        }
-    
-        function createTable(){
-
         }
     
     </script>
