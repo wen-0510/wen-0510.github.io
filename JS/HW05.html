@@ -76,11 +76,11 @@
         <button class="btn btn-warning" id="listhero">以文字迭代英雄人物資料</button>
         <button class="btn btn-primary" id="tablehero">以表格呈現英雄人物資料</button>
     </div>
-    <div id="result">
+    <!-- <div id="result">
         <table class="table table-bordered table-striped text-center table-primary">
 
         </table>
-    </div>
+    </div> -->
     <div id="container" class="row">
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" card-index="1">
             <div class="card" id="Aatrox">
@@ -2197,11 +2197,12 @@
                     return;
                 }
                 //alert("以文字迭代英雄人物資料！");
-                document.body.innerHTML = "";
+                container.innerHTML = "";
                 heroArray.forEach((hero,index) => {
                     let p = document.createElement("p");
+                    hero = Object.values(hero)
                     p.innerText = JSON.stringify(hero);
-                    document.body.append(p);
+                    container.append(p);
 
                 })
 
@@ -2215,13 +2216,15 @@
                 }
                 
                 alert("以表格呈現英雄人物資料！");
-
+                container.innerHTML = "";
                 CreateTable();
+                
+
             });
+            
         }
         
 
-        let result = document.getElementById("result");
         let table = document.createElement("table");
         let thead = document.createElement("thead");
         let tbody = document.createElement("tbody");
@@ -2230,13 +2233,11 @@
         function heroData(){
             let cards = container.querySelectorAll(".card");
             cards.forEach((card , index) => {
-                    let id = index + 1;
                     let heroname = card.querySelector(".card-title").innerHTML;
                     let hero_intro = card.querySelector(".card-text") .innerHTML;
                     let imgurl = card.querySelector("img").src;
 
                     let hero = {
-                        "id":id,
                         "heroname":heroname,
                         "hero_intro":hero_intro,
                         "imgurl":imgurl
@@ -2246,47 +2247,43 @@
                 });
         }
 
-        let heroTitle = [], heroInfo = [];
+        
         let one;
         function CreateTable(){
+
+            thead.innerHTML = "";
+            CreateThead();
+
+            tbody.innerHTML = "";
+            CreateTbody(heroArray);
+            container.append(table);
+        }
+
+        function CreateThead(){
+            let theadtr = document.createElement("tr");
             let one = heroArray[0];
             let title = Object.keys(one);
             title.forEach(item => {
-                heroTitle.push(item);
-            })
-            CreateThead(heroTitle);
-
-            heroArray.forEach(item => {
-                let values = Object.values(item);
-                heroInfo.push(values);
-            })
-            CreateTbody(heroInfo);
-        }
-
-        function CreateThead(theadTable){
-            let theadtr = document.createElement("tr");
-            theadTable.forEach(item => {
                 let th = document.createElement("th");
                 th.innerHTML = item;
                 theadtr.append(th);
             })
             thead.append(theadtr);
             table.append(thead);
-            result.append(table);
         }
 
         function CreateTbody(tbodyTable){
             tbodyTable.forEach(heroData =>{
+                let values = Object.values(heroData);
                 let tbodytr = document.createElement("tr");
-                heroData.forEach(item => {
+                values.forEach(item => {
                     let td = document.createElement("td");
                     td.innerHTML = item;
                     tbodytr.append(td);
                 });
                 tbody.append(tbodytr);
             });
-            table.append(tbody);
-            result.append(table);                
+            table.append(tbody);               
         }
 
     </script>
