@@ -66,6 +66,9 @@
         .modal-header {
             background-color: cornflowerblue;
         }
+        table{
+            background-color: rgb(56, 89, 206,.3);
+        }
     </style>
 </head>
 
@@ -2224,11 +2227,10 @@
             
         }
         
-
         let table = document.createElement("table");
         let thead = document.createElement("thead");
         let tbody = document.createElement("tbody");
-        table.setAttribute("class","table table-bordered table-striped text-center table-warning")
+        table.setAttribute("class","table table-bordered table-striped text-center ")
 
         function heroData(){
             let cards = container.querySelectorAll(".card");
@@ -2247,7 +2249,7 @@
                 });
         }
 
-        
+        let heroTitle = [];
         let one;
         function CreateTable(){
 
