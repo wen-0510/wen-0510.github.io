@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>幾a幾b</title>
+    <style>
+        .container {
+            width: 1000px;
+        }
+        .row {
+            width: 800px;
+        }
+        p {
+            height: 50px;
+            border: 1px solid rgb(105, 103, 103, .5);
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .box-show {
+            width: 775px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid rgb(105, 103, 103, .5);
+        }
+
+        .message {
+            line-height: 2.5;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container mt-5">
+        <div class="row m-auto ">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-primary start" for="btncheck1">開始</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-primary rest" for="btncheck2">放棄重來</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-primary see" for="btncheck3">看答案</label>
+            </div>
+            <div class=" my-4 box-show overflow-auto">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text" id="btnGroupAddon">猜答案</div>
+                <input type="text" value="" class="form-control inputbox" aria-label="Input group example"
+                    aria-describedby="btnGroupAddon">
+                <button type="button" class="btn guess btn-outline-secondary">猜!</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let number = [...Array(10).keys()];
+        let answer = [];
+        let guess = document.querySelector(".guess");
+        let input = document.querySelector(".inputbox");
+        let box_show = document.querySelector(".box-show");
+        let rest = document.querySelector(".rest");
+        let see = document.querySelector(".see");
+        let start = document.querySelector(".start");
+        let random;
+        let p;
+        let span_ab, span_num;
+        let people_guess;
+
+        window.onload = function () {
+            startRandom();
+            game();
+            again();
+            seeAnswer();
+        }
+
+        function startRandom() {
+            start.addEventListener('click', () => {
+                for (let i = 0; i < 4; i++) {
+                    random = Math.floor(Math.random() * number.length);
+                    answer.push(number[random]);
+                    number.splice(random, 1)
+                }
+            });
+        }
+
+        function game() {
+            guess.addEventListener('click', () => {
+                let a = 0;
+                let b = 0;
+                people_guess = input.value;
+
+
+                p = document.createElement("p");
+                p.setAttribute("class", "box d-flex");
+                span_ab = document.createElement("span");
+                span_num = document.createElement("span");
+                span_ab.setAttribute("class", "ab-answer ms-2 d-inline-block mt-1");
+                span_num.setAttribute("class", "message ms-2 mt-1");
+                p.append(span_ab);
+                p.append(span_num);
+                span_num.innerHTML = input.value;
+                box_show.append(p);
+
+
+                span_ab.style.backgroundColor = "rgb(234, 22, 22,.8)";
+                span_ab.style.color = "white";
+                span_ab.style.width = "55px";
+                span_ab.style.height = "40px";
+                span_ab.style.padding = "8px";
+                span_ab.style.borderRadius = "10px";
+                
+
+                if (input.value.length != 4) {
+                    alert("請輸入4位數");
+                    span_num.style.color = "red";
+                    span_num.innerHTML = "錯囉";
+                }
+
+                for (let i = 0; i < 4; i++) {
+                    if (people_guess[i] == answer[i]) {
+                        a++;
+                    }
+                    else if (people_guess[i] != answer[i] && people_guess.indexOf(answer[i]) != -1) {
+                        b++;
+                    }
+
+
+                }
+
+                span_ab.innerHTML = `${a}A${b}B`;
+                if (a == 4) {
+                    span_ab.style.backgroundColor = "green";
+                    alert("恭喜答對");
+                }
+
+            })
+        }
+        function again() {
+            rest.addEventListener('click', () => {
+                if(span_num.innerHTML == input.value){
+                    box_show.innerHTML = "";
+                    input.value = "";
+                    answer = [];
+                    alert("按開始就能重新遊戲");
+                }
+                else{
+                    alert("還沒開始別想結束");
+                }
+            })
+        }
+        function seeAnswer() {
+            see.addEventListener('click', () => {
+                answer = answer.join('');
+                alert(`答案是${answer}`);
+            })
+        }
+    </script>
+
+</body>
+
+</html>
