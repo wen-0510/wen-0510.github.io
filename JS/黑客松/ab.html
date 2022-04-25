@@ -24,14 +24,12 @@
             margin: auto;
             margin-top: 10px;
         }
-
         .box-show {
             width: 775px;
             height: 500px;
             margin: auto;
             border: 1px solid rgb(105, 103, 103, .5);
         }
-
         .message {
             line-height: 2.5;
         }
@@ -52,10 +50,9 @@
                 <label class="btn btn-outline-primary rest" for="btncheck2">放棄重來</label>
 
                 <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                <label class="btn btn-outline-primary see" for="btncheck3">看答案</label>
+                <label class="btn btn-outline-primary see disabled" for="btncheck3">看答案</label>
             </div>
-            <div class=" my-4 box-show overflow-auto">
-            </div>
+            <div class=" my-4 box-show overflow-auto"></div>
             <div class="input-group mb-3">
                 <div class="input-group-text" id="btnGroupAddon">猜答案</div>
                 <input type="text" value="" class="form-control inputbox" aria-label="Input group example"
@@ -83,6 +80,7 @@
         let people_guess;
 
         window.onload = function () {
+            guess.style.display = "none"
             startRandom();
             game();
             again();
@@ -94,7 +92,10 @@
                 for (let i = 0; i < 4; i++) {
                     random = Math.floor(Math.random() * number.length);
                     answer.push(number[random]);
-                    number.splice(random, 1)
+                    number.splice(random, 1);
+                    guess.style.display = "block";
+                    see.removeAttribute("class","disabled");
+                    see.setAttribute("class","btn btn-outline-primary see");
                 }
             });
         }
@@ -117,13 +118,13 @@
                 span_num.innerHTML = input.value;
                 box_show.append(p);
 
-
                 span_ab.style.backgroundColor = "rgb(234, 22, 22,.8)";
                 span_ab.style.color = "white";
                 span_ab.style.width = "55px";
                 span_ab.style.height = "40px";
                 span_ab.style.padding = "8px";
                 span_ab.style.borderRadius = "10px";
+                
                 
 
                 if (input.value.length != 4) {
@@ -132,6 +133,7 @@
                     span_num.innerHTML = "錯囉";
                 }
 
+
                 for (let i = 0; i < 4; i++) {
                     if (people_guess[i] == answer[i]) {
                         a++;
@@ -139,8 +141,6 @@
                     else if (people_guess[i] != answer[i] && people_guess.indexOf(answer[i]) != -1) {
                         b++;
                     }
-
-
                 }
 
                 span_ab.innerHTML = `${a}A${b}B`;
