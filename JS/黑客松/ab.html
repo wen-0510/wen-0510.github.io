@@ -23,6 +23,7 @@
             border: 1px solid rgb(105, 103, 103, .5);
             margin: auto;
             margin-top: 10px;
+            background-color: rgba(166, 73, 242, 0.1);
         }
         .box-show {
             width: 775px;
@@ -33,11 +34,18 @@
         .message {
             line-height: 2.5;
         }
+        span:first-child{
+            color: white;
+            width: 55px;
+            height: 40px;
+            background-color: rgb(234, 22, 22,.8);
+            padding: 8px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
-
 
 
     <div class="container mt-5">
@@ -106,7 +114,7 @@
                 let a = 0;
                 let b = 0;
                 people_guess = input.value;
-
+                
 
                 p = document.createElement("p");
                 p.setAttribute("class", "box d-flex");
@@ -118,13 +126,6 @@
                 p.append(span_num);
                 span_num.innerHTML = input.value;
                 box_show.append(p);
-
-                span_ab.style.backgroundColor = "rgb(234, 22, 22,.8)";
-                span_ab.style.color = "white";
-                span_ab.style.width = "55px";
-                span_ab.style.height = "40px";
-                span_ab.style.padding = "8px";
-                span_ab.style.borderRadius = "10px";
                 
                 
 
@@ -132,7 +133,6 @@
                     alert("請輸入數字並且為4位數");
                     box_show.lastChild.remove();
                 }
-
 
                 for (let i = 0; i < 4; i++) {
                     if (people_guess[i] == answer[i]) {
@@ -147,6 +147,7 @@
 
                 span_ab.innerHTML = `${a}A${b}B`;
                 if (a == 4) {
+                    p.style.backgroundColor = "rgb(170, 243, 44,.2)";
                     span_ab.style.backgroundColor = "green";
                     alert("恭喜答對");
                 }
