@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .computer {
+            width: 380px;
+            margin: auto;
+            border: 1px solid rgb(105, 103, 103, .5);
+        }
+
+        .text {
+            width: 340px;
+            height: 50px;
+            border: 1px solid rgb(105, 103, 103, .5);
+            margin: auto;
+        }
+
+        .computer-btn {
+            margin: 0 20px;
+        }
+
+        .numberofone {
+            padding: 8px 32px;
+
+        }
+
+        .numberoftwo {
+            padding: 8px 32px;
+            margin-left: 9px;
+
+        }
+
+        .numberofthree {
+            padding: 8px 32px;
+            margin-left: 9px;
+
+        }
+
+        .numberoffour {
+            padding: 8px 32px;
+            margin-left: 9px;
+
+        }
+
+        .numberLastOne {
+            padding: 8px 30px;
+        }
+
+        .numberLastthree {
+            padding: 8px 34px;
+            margin-left: 9px;
+        }
+
+        .numberLastfour {
+            padding: 8px 30px;
+            margin-left: 9px;
+        }
+
+        .groupoftwo {
+            padding: 8px 30px;
+            margin-left: 6px;
+        }
+
+        .groupofthree {
+            padding: 8px 30px;
+            margin-left: 6px;
+        }
+
+        .groupoffour {
+            padding: 8px 32px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="computer mt-5">
+            <div class="my-3">
+                <input type="email" value="" class="text form-control mb-2" id="exampleFormControlInput1" placeholder="">
+            </div>
+            <div class="computer-btn">
+                <div class="mb-3 group">
+                    <button type="button" class="btn btn-danger w-50 px-5 py-2 ac" id="none">C</button>
+                    <button type="button" class="btn btn-warning  groupoftwo" id="back">></button>
+                    <button type="button groupofthree"  class="btn btn-primary groupofthree symbol" id="add">+</button>
+                </div>
+                <div class="mb-3">
+                    <button type="button" value="1" class="btn btn-dark  numberofone number" id="one ">1</button>
+                    <button type="button" value="2" class="btn btn-dark  numberoftwo number" id="two ">2</button>
+                    <button type="button" value="3" class="btn btn-dark  numberofthree number" id="three ">3</button>
+                    <button type="button" class="btn btn-primary numberoffour symbol" id="sub">-</button>
+                </div>
+                <div class="mb-3">
+                    <button type="button" value="4" class="btn btn-dark numberofone number" id="four ">4</button>
+                    <button type="button" value="5" class="btn btn-dark  numberoftwo number" id="five ">5</button>
+                    <button type="button" value="6" class="btn btn-dark numberofthree number" id="six ">6</button>
+                    <button type="button" class="btn btn-primary numberoffour symbol" id="mulit">*</button>
+                </div>
+                <div class="mb-3">
+                    <button type="button" value="7" class="btn btn-dark numberofone number" id="seven ">7</button>
+                    <button type="button" value="8" class="btn btn-dark numberoftwo number" id="eight ">8</button>
+                    <button type="button" value="9" class="btn btn-dark numberofthree number" id="nine ">9</button>
+                    <button type="button" class="btn btn-primary numberoffour symbol" id="qu">/</button>
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-success numberLastOne" id="equl">=</button>
+                    <button type="button" value="0" class="btn btn-dark numberoftwo number" id="zero ">0</button>
+                    <button type="button" class="btn btn-info numberLastthree number" id="dot">.</button>
+                    <button type="button" class="btn btn-primary numberLastfour symbol" id="percent">%</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        let number = document.querySelectorAll(".number");
+        let input = document.querySelector(".text");
+        let back = document.getElementById("back");
+        let equl = document.getElementById("equl");
+        let ac = document.querySelector(".ac");
+        let symbol = document.querySelectorAll(".symbol");
+        let op = "";
+        let text;
+        
+
+        for (let i = 0; i < number.length; i++) {
+            number[i].addEventListener('click', function (event) {
+                text = event.target.innerHTML;
+                input.value += text;
+            })
+        }
+
+        for(let i = 0; i < symbol.length; i++){
+            symbol[i].addEventListener('click',function(event){
+                op = event.target.innerText
+                input.value += op;
+            });
+        }
+        let again = true;
+        equl.addEventListener('click',function(){
+            input.value = eval(input.value);            
+        });
+
+        ac.addEventListener('click', function (event) {
+            input.value = "";
+        });
+
+        back.addEventListener('click',function(event){
+            input.value = input.value.substring(0,input.value.length-1);
+        })
+
+    </script>
+</body>
+
+</html>
