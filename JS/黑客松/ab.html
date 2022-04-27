@@ -48,6 +48,7 @@
 <body>
 
 
+
     <div class="container mt-5">
         <div class="row m-auto ">
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
@@ -106,6 +107,7 @@
                     see.removeAttribute("class","disabled");
                     see.setAttribute("class","btn btn-outline-primary see");
                 }
+                guess.removeAttribute("disabled","disabled")
             });
         }
 
@@ -126,13 +128,19 @@
                 p.append(span_num);
                 span_num.innerHTML = input.value;
                 box_show.append(p);
-                
+
                 
 
                 if (input.value.length != 4) {
-                    alert("請輸入數字並且為4位數");
+                    alert("請輸入4位數");
                     box_show.lastChild.remove();
                 }
+                else if(new Set(people_guess).size != 4){
+                    alert("數字不得重複");
+                    box_show.lastChild.remove();
+                }
+
+
 
                 for (let i = 0; i < 4; i++) {
                     if (people_guess[i] == answer[i]) {
@@ -150,6 +158,8 @@
                     p.style.backgroundColor = "rgb(170, 243, 44,.2)";
                     span_ab.style.backgroundColor = "green";
                     alert("恭喜答對");
+                    
+                    guess.setAttribute("disabled","disabled");
                 }
 
             })
