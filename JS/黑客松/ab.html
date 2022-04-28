@@ -65,7 +65,7 @@
             <div class="input-group mb-3">
                 <div class="input-group-text" id="btnGroupAddon">猜答案</div>
                 <input type="text" value="" class="form-control inputbox" aria-label="Input group example"
-                    aria-describedby="btnGroupAddon" onkeyup="value=value.replace(/[^\0-9]/g,'')">
+                    aria-describedby="btnGroupAddon">
                 <button type="button" class="btn guess btn-outline-secondary">猜!</button>
             </div>
         </div>
@@ -129,18 +129,19 @@
                 span_num.innerHTML = input.value;
                 box_show.append(p);
 
+
                 
 
-                if (input.value.length != 4) {
-                    alert("請輸入4位數");
+                let regular = /^\d{4}$/;
+
+                if (!regular.test(input.value)) {
+                    alert("請輸入4位數為阿拉伯數字");
                     box_show.lastChild.remove();
                 }
                 else if(new Set(people_guess).size != 4){
                     alert("數字不得重複");
                     box_show.lastChild.remove();
                 }
-
-
 
                 for (let i = 0; i < 4; i++) {
                     if (people_guess[i] == answer[i]) {
