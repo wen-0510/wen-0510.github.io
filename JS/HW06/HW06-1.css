@@ -1,0 +1,57 @@
+.main-nav{
+    background: rgba(0,0,0,0.8);
+}
+.container .col-6{
+    margin-left: 120px;
+}
+.ipadImg img{
+    margin-left: 100px;
+}
+.ipadColor{
+    width: 455px;
+    margin-top: 190px;
+    padding-bottom: 30px;
+}
+.ipadColor img{
+    width: 25%;
+}
+.exterior{
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+.colors{
+    border: 1px solid rgb(186, 185, 185);
+    width: 195px;
+    padding: 15px 45px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px 10px;
+    transition: all 1.2s;
+    
+}
+.spantext{
+    font-size: 12px;
+}
+.item span{
+    display: block;
+    margin-top: 10px;
+}
+.gray{
+    margin-left: 80px;
+}
+.device p,
+.connect p{
+    background-color: rgb(193, 191, 191,.2);
+    border-radius: 20px;
+    font-size: 12px;
+}
+.change{
+    margin-left: 320px;
+    text-decoration: none;
+    
+}
+.spant-title{
+    font-style: 14px;
+}
+
+

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="./HW06.css">
+</head>
+
+<body>
+
+    <header class="main-nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-xxl">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white text-opacity-75 me-5" aria-current="page"
+                                href="#">商店</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">Mac</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">iPad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">iPhone</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">Watch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">AirPods</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">TV 和家庭</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">Apple 獨家</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75 me-5" href="#">配件</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-opacity-75" href="#">支援服務</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="ipad-btn text-end me-5 mt-3">
+        <button type="button" class="btn btn-dark">iPad Air</button>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row flex-lg-nowrap">
+                <div class="col-6 mx-0 ipadImg">
+                    <img src="https://raw.githubusercontent.com/wen-0510/wen-0510.github.io/main/JS/HW06/ipad-air-select.jpeg"
+                        alt="" class="w-75 ipadLeftPicture sticky-top">
+                </div>
+                <div class="col-6 ipadColor mx-0 my-5 ">
+                    <div class="row">
+                        <div class="buy-ipad ms-3">
+                            <span class="text-danger fw-bold">全新</span>
+                            <span class="d-block fs-2 fw-bold">購買 iPad Air</span>
+                        </div>
+                        <span class="fw-bold ms-3 exterior">外觀</span>
+                        <div class="col-12 mx-0 item d-flex flex-wrap">
+                        </div>
+                        <div class="device ms-3 mt-5">
+                            <span class="fw-bold">儲存裝置</span>
+                            <p class="p-3 mt-3"><strong>提前為日後預留空間。</strong>你的 iPad Air 儲存空間愈大，
+                                你就有愈多空間儲存數位內容，滿足今日所需，也滿足未來需求。</p>
+                        </div>
+                        <div class="col-12 mx-0 storage-GB d-flex flex-wrap"></div>
+                        <div class="connect ms-3 mt-5">
+                            <span class="fw-bold">連線能力</span>
+                            <p class="p-3 mt-3"><strong>兩種快速的方式，讓你時時保持聯繫。</strong>每部 iPad Air 都可連接到 Wi-Fi 網路。Wi-Fi +
+                                行動網路機型則讓你在無法使用 Wi-Fi 時，也能連上線。</p>
+                        </div>
+                        <div class="col-12 mx-0 wifi d-flex flex-wrap"></div>
+                        <span class="price ms-3 mt-5 fw-bold fs-3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+        let url = "https://raw.githubusercontent.com/wen-0510/FileStorages/main/ipadAir.json"
+        let xhr = new XMLHttpRequest();
+        let ipadArray;
+        let ipadColor = [];
+        let ipadPicture, colorObj, ipadColors, ipadPrice, ipadStorage, ipadNetwork, ipadLeft;
+        let ipad_btn = document.querySelector(".ipad-btn");
+        let storage_GB = document.querySelector(".storage-GB")
+        let wifi = document.querySelector(".wifi")
+        let item = document.querySelector(".item");
+        let exterior = document.querySelector(".exterior");
+        exterior.style.display = "none"
+        let btn
+        let img
+        let span
+        let ipadLeftPicture = document.querySelector(".ipadLeftPicture");
+        let ipadImg = document.querySelector(".ipadImg")
+        ipadLeftPicture.style.display = "none"
+        let buy_ipad = document.querySelector(".buy-ipad")
+        let device = document.querySelector(".device")
+        let connect = document.querySelector(".connect")
+        let price = document.querySelector(".price")
+        buy_ipad.style.display = "none"
+        device.style.display = "none"
+        connect.style.display = "none"
+        let sticky = document.querySelector(".ipadColor .row")
+        let btnColor
+        let div = document.createElement("div")
+        let storage_div
+        
+        
+
+        window.onload = function () {
+
+            ipad_btn.addEventListener('click', () => {
+                Data()
+
+                
+                div.innerText = "";
+                
+                storage_GB.innerText = ""
+                wifi.innerText = ""
+            })
+
+
+        }
+        function Data() {
+            xhr.onload = function () {
+                ipadArray = JSON.parse(this.responseText)
+
+                colorChoose();
+                storageChoose();
+                wifiChoose();
+
+            }
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+
+        function colorChoose() {
+            ipadColors = [...new Set(ipadArray.map(x => x.color))]
+            ipadPrice = [...new Set(ipadArray.map(x => x.price))]
+
+            ipadStorage = [...new Set(ipadArray.map(x => x.storage))]
+
+            ipadNetwork = [...new Set(ipadArray.map(x => x.network))]
+
+            ipadPicture = [...new Set(ipadArray.map(x => x.picture))]
+            console.log(ipadPicture)
+            ipadLeft = [...new Set(ipadArray.map(x => x.ipad_entity))]
+            const colorList = [];
+            exterior.style.display = "block"
+            ipadLeftPicture.style.display = "block"
+            buy_ipad.style.display = "block"
+
+            
+            let changep = document.createElement("p")
+            let changespan = document.createElement("span")
+            let changesp_two = document.createElement("span")
+            ipadColors.forEach((colors, index) => {
+
+                colorObj = { color: colors, pic: ipadPicture[index] };
+                btnColor = document.createElement("button")
+                img = document.createElement("img")
+                span = document.createElement("span")
+                span.innerText = ipadColors[index]
+                img.setAttribute("src", `${colorObj.pic}`)
+                btnColor.setAttribute("class", "colors col-md-6 btn btn-outline-secondary ")
+                span.setAttribute("class", "spantext")
+
+                item.append(div)
+                div.append(btnColor)
+                btnColor.append(img,span)
+
+            
+                
+                btnColor.addEventListener('click', () => {
+
+                    colorObj = { Left: ipadLeft[index], color: colors};
+                    ipadLeftPicture.setAttribute("src", `${colorObj.Left}`)
+                    ipadImg.append(ipadLeftPicture)
+                    div.style.display = "none"
+
+                    
+                    changespan.innerText = colorObj.color
+                    changesp_two.innerText = "更改"
+                    changespan.classList.add("col-10")
+                    changesp_two.classList.add("link-primary","changesp_two","col-2")
+                    changep.classList.add("d-inline-flex","ms-3","col-12")
+                    item.append(changep)
+                    changep.append(changespan,changesp_two)
+
+                    
+                })
+                changesp_two.addEventListener('click', function () {
+
+                    div.style.display = 'block'
+                    changep.style.display = 'none'
+                    changespan.classList.remove("col-10")
+                    changesp_two.classList.remove("link-primary","changesp_two","col-2")
+                    changep.classList.remove("d-inline-flex","ms-3","col-12")
+
+                })
+
+            })
+
+        }
+
+
+
+
+        function storageChoose() {
+            device.style.display = "block";
+            storage_div = document.createElement("div")
+            ipadStorage.forEach(storage => {
+                btn = document.createElement("button");
+                span = document.createElement("span");
+                btn.setAttribute("class", "colors col-md-6 btn btn-outline-secondary")
+                span.setAttribute("class", "fw-bold spant-itle")
+                span.innerText = storage;
+                storage_GB.append(storage_div)
+                storage_div.append(btn)
+                btn.append(span);
+
+
+                span1 = document.createElement("span");
+                span1.setAttribute("class", "d-block spantext")
+
+                let changep = document.createElement("p")
+                let changespan = document.createElement("span")
+                let changesp_two = document.createElement("span")
+                if (storage == "64GB") {
+                    span1.innerText = `NT$${ipadPrice[0]}起`
+                }
+                else {
+                    span1.innerText = `NT$${ipadPrice[1]}起`
+                }
+                btn.append(span1)
+
+                btn.addEventListener('click', () => {
+                    if (storage == "64GB") {
+                        price.innerText = `NT$${ipadPrice[0]}`
+                    }
+                    else {
+                        price.innerText = `NT$${ipadPrice[1]}`
+                    }
+
+                    changespan.innerText = storage
+                    
+                    changesp_two.innerText = "更改"
+                    
+                    changespan.classList.add("col-10")
+                    changesp_two.classList.add("link-primary","changesp_storage","col-2")
+                    changep.classList.add("d-inline-flex","ms-3","col-12")
+                    storage_GB.append(changep)
+                    changep.append(changespan,changesp_two)
+                    storage_div.style.display = "none"
+                })
+
+                changesp_two.addEventListener('click', function () {
+
+                    storage_div.style.display = 'block'
+                    changep.style.display = 'none'
+                    changespan.classList.remove("col-10")
+                    changesp_two.classList.remove("link-primary","changesp_storage","col-2")
+                    changep.classList.remove("d-inline-flex","ms-3","col-12")
+
+                })
+            })
+
+        }
+
+        function wifiChoose() {
+            connect.style.display = "block";
+            let wifi_div = document.createElement("div")
+            ipadNetwork.forEach(network => {
+                btn = document.createElement("button");
+                span = document.createElement("span");
+                btn.setAttribute("class", "colors col-md-6 btn btn-outline-secondary")
+                span.setAttribute("class", "fw-bold spant-title")
+                span.innerText = network;
+                wifi.append(wifi_div)
+                wifi_div.append(btn)
+                btn.append(span);
+
+
+                span1 = document.createElement("span");
+                span1.setAttribute("class", "d-block spantext")
+
+                let changep = document.createElement("p")
+                let changespan = document.createElement("span")
+                let changesp_two = document.createElement("span")
+                if (network == "Wi-Fi") {
+
+                    span1.innerText = `NT$${ipadPrice[0]}起`
+                }
+                else {
+                    span1.innerText = `NT$${ipadPrice[1]}起`
+                }
+                btn.append(span1)
+
+
+                btn.addEventListener('click', () => {
+                    if (network == "Wi-Fi") {
+                        price.innerText = `NT$${ipadPrice[0]}`
+                    }
+                    else {
+                        price.innerText = `NT$${ipadPrice[1]}`
+                    }
+
+
+                    changespan.innerText = network
+                    
+                    changesp_two.innerText = "更改"
+                    
+
+                    changespan.classList.add("col-10")
+                    changesp_two.classList.add("link-primary","changesp_wifi","col-2")
+                    changep.classList.add("d-inline-flex","ms-3","col-12")
+                    wifi.append(changep)
+                    changep.append(changespan,changesp_two)
+                    wifi_div.style.display = "none"
+                })
+
+
+                changesp_two.addEventListener('click', function () {
+
+                    wifi_div.style.display = 'block'
+                    changep.style.display = 'none'
+                    changespan.classList.remove("col-10")
+                    changesp_two.classList.remove("link-primary","changesp_wifi","col-2")
+                    changep.classList.remove("d-inline-flex","ms-3","col-12")
+                })
+            })
+
+
+        }
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
